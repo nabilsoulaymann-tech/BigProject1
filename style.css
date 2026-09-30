@@ -1,0 +1,276 @@
+
+
+*{
+    font-family: 'Forum';
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+overflow-y:visible;
+}
+#herodiv{
+    overflow: hidden;
+    position:relative;
+    background-image: linear-gradient(to right,#622d96 ,#ba41d8 );
+    width:100%;
+    height:100vh;
+}
+
+.line{
+ 
+    border:solid white 3px;
+    position:relative
+}
+.dot{
+    
+    content: '';
+    position:absolute;
+    width:60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translate(-30px,60px);
+    
+}
+
+.pcontainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-image: url('background.gif');
+  opacity: 0.08;
+  z-index: 0;
+}
+.p1{
+    opacity:1;
+    position: absolute;
+top:40%;
+left:20%;
+  font-size:100px;
+  color:white;
+  width:40%;
+  
+}
+@keyframes scrollbar{
+    to {
+        transform: scaleX(1) ;
+    }
+}
+header::before{
+    content:'';
+    top:0;
+    left:0;
+    z-index: 9999;
+    width:100%;
+    height:20px;
+    background-color:rgb(128, 0, 77);
+    position:absolute;
+    animation: scrollbar linear;
+    transform-origin: 0;
+    transform: scaleX(0);
+    animation-timeline: scroll();
+}
+header{
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+    height:7vh;
+    border:solid black 1px;
+    background-color: black;
+    margin-bottom: 0px;
+}
+header nav ul{
+    align-items: center;
+    margin-right:20px;
+    display:flex;
+    justify-content:flex-end;
+    
+}
+.icons{
+    width:200px;
+    height:100px
+}
+
+header nav ul li a{
+    
+    margin-left:30px;
+    
+    color:rgb(247, 247, 247);
+    text-decoration:none;
+    font-size: 100px;
+}
+#planet1{
+    height:50%;
+    position: absolute;
+    bottom: 30%;
+    right:0
+}
+header nav ul li a:hover{
+    font-size:130px;
+    background-color: #622d96;
+    border-radius: 30px;
+}
+#ast{
+    left:0;
+    position:absolute;
+    height:40%;
+    top:0;
+}
+#planet1{
+    
+    animation-name: anm1;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+
+}
+@keyframes anm1{
+    0%{
+       
+        
+    }
+    25%{
+        transform: rotate(360deg);
+    }
+    75%{
+        transform: scale(2);
+    }
+}
+#container2{
+    
+    gap:10px;
+    overflow: hidden;
+    display: grid;
+    width:100vw;
+    max-height:fit-content;
+    grid-template-columns: 1fr 3px 1fr;
+    font-size: 50px;
+}
+.boxes{
+
+    margin:1.5em;
+    border-radius: 10px;
+    padding:1.5em;
+    background: rgba(255,255,255,0.2);
+   font-weight: bold;
+   font-size: 80px;
+    color:lightpink
+}
+.time{
+    color:white;
+    font-weight: bold;
+    padding:1.5em;
+}
+#preloader{
+   background: black url('preloader.gif') no-repeat center center;
+      
+      width:100%;
+      height:100%;
+       position:fixed;
+       z-index: 100000;
+      
+}
+@keyframes fade-in {
+    from{
+       transform:scale(0.5);opacity: 0.4;
+    }
+    to{
+       transform: scale(1); opacity:1;
+    }
+}
+.cached{
+opacity:0;
+transform: translateX(-200px);
+}
+.cached.visible{
+    opacity:1;
+    transform: translateX(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+/* Question */
+#projects, #about{
+    overflow: hidden;
+background-image:linear-gradient(to right,#622d96 ,#ba41d8);
+position: relative;
+}
+#about{
+    display:flex;
+    flex-direction: column;
+}
+#mainmv{
+   
+    height:20%;
+    position: absolute;
+    bottom: 80%;
+    /* Question */
+    right:0
+}
+#about{
+    
+ opacity:0;
+}
+#about.visible{
+    opacity:1;
+    transition: opacity 2s ease;
+}
+#projects {
+  padding-top: 12vh;
+  padding-bottom: 8vh;
+}
+
+.carousel {
+  position: relative;
+  
+  width: 88%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 30px 80px rgba(20, 0, 40, 0.5);
+}
+
+.carousel .track {
+    
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.item {
+  flex: 0 0 100%;
+}
+
+.Movies {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.cbtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.18);
+ 
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.cbtn:hover {
+  background: white;
+  color: #622d96;
+  transform: translateY(-50%) scale(1.12);
+}
+.prev 
+{ left: 18px;
+ }
+.next {
+     right: 18px; 
+    }
